@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block main %}
+<form action="task/create/" method="post">
+  {% csrf_token %}
+  <label class="form-label d-block">
+    <h5>Add Task</h5>
+    <div class="d-flex col-6">
+      {{form.title}}
+      <input type="time" name="time" />
+      <button type="submit" class="btn btn-secondary mx-3">Submit</button>
+    </div>
+  </label>
+</form>
+<div class="list-group my-kk5">
+  {% for task in tasks %}
+  <label
+    class="list-group-item d-flex justify-content-between align-items-center"
+  >
+    <div class="d-flex gap-3">
+      <input
+        class="task-state form-check-input flex-shrink-0"
+        type="checkbox"
+        style="font-size: 1.375em"
+      />
+      <div class="task-text pt-1 form-checked-content">
+        <strong>{{task.title}}</strong>
+        <small class="d-block text-muted">
+          <svg class="bi me-1" width="1em" height="1em">
+            <use xlink:href="#calendar-event"></use>
+          </svg>
+          {{task.time}}
+        </small>
+      </div>
+    </div>
+    <a
+      href="{% url 'delete-task' task.id %}"
+      class="btnfloat-end flex-end btn btn-danger btn-sm"
+      >Delete</a
+    >
+  </label>
+  {% endfor %}
+</div>
+{% endblock main %}
