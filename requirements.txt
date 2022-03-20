@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 asgiref==3.5.0
 Django==4.0.3
 gunicorn==20.1.0
 sqlparse==0.4.2
 tzdata==2022.1
 whitenoise==6.0.0
+=======
+asgiref==3.5.0
+Django==4.0.3
+gunicorn==20.1.0
+sqlparse==0.4.2
+tzdata==2022.1
+whitenoise==6.0.0
+>>>>>>> 6f69dd3f53438c8d1e01a9951b560466c2d3731c
